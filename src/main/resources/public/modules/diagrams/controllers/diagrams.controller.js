@@ -108,6 +108,7 @@ angular.module('diagrams').controller('DiagramsController', ['$scope', '$rootSco
 			var diagramContainerId = 'diagramContainer';
 			var diagramContainer = $('#'+diagramContainerId);
 			diagramContainer.children().remove();
+			$scope.error = '';
 		    
 			var renderCallback = function (svgCode, bindFunctions){
 				if(svgCode == '') {
