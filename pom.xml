@@ -91,6 +91,17 @@
 		</dependency>
 	</dependencies>
 
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<build>
 		<finalName>quickie</finalName>
 		<plugins>
