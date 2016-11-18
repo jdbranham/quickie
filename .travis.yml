@@ -1,8 +1,7 @@
 language: java
 jdk:
-  - oraclejdk8
+  - openjdk8
 before_install:
-  - sudo apt-get update
   - npm install bower -g
   - bower install
 script: mvn clean install
