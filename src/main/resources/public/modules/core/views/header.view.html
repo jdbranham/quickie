@@ -1,0 +1,48 @@
+<div class="container" data-ng-controller="HeaderController">
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a href="/#!/" ><img src="modules/core/img/brand/logo.svg" height="46px" /></a>
+	</div>
+	<nav class="uib-collapse navbar-collapse" uib-collapse="!isCollapsed" role="navigation">
+		<ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
+			<li data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ng-switch="item.menuItemType" ui-route="{{item.uiRoute}}" class="{{item.menuItemClass}}" ng-class="{active: ($uiRoute)}" uib-dropdown="item.menuItemType === 'dropdown'">
+				<a ng-switch-when="dropdown" uib-dropdown-toggle>
+					<span data-ng-bind="item.title"></span>
+					<b class="caret"></b>
+				</a>
+				<ul ng-switch-when="dropdown" uib-dropdown-menu role="menu">
+					<li role="menuitem" data-ng-repeat="subitem in item.items | orderBy: 'position'" data-ng-if="subitem.shouldRender(authentication.user);" ui-route="{{subitem.uiRoute}}" ng-class="{active: $uiRoute}">
+						<a href="/#!/{{subitem.link}}" data-ng-bind="subitem.title"></a>
+					</li>
+				</ul>
+				<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.security.authenticated">
+			<li class="hidden" ui-route="/signup" ng-class="{active: $uiRoute}">
+				<a href="/#!/signup">Sign Up</a>
+			</li>
+			<li class="divider-vertical"></li>
+			<li ui-route="/signin" ng-class="{active: $uiRoute}">
+				<a href="/#!/signin">Sign In</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.security.authenticated">
+			<li uib-dropdown>
+				<a href="#" uib-dropdown-toggle on-toggle="dropdown">
+					<span data-ng-bind="authentication.user.firstName"></span> <b class="caret"></b>
+				</a>
+				<ul class="uib-dropdown-menu">
+					<li>
+						<a ng-click="logout()">Signout</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>

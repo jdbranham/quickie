@@ -1,0 +1,29 @@
+.diagram-list div{
+	white-space: nowrap;
+}
+
+.diagram-list div a{
+	padding-left: 0.3em;
+}
+
+.diagram-list .shorten{
+	overflow-x: hidden;
+}
+
+.diagram-list .row{
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+}
+
+.diagram-list .even-row {
+	background-color: #DDD;
+}
+
+div.diagram {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div.diagram g.label {
+	color: #333;
+}

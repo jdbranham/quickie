@@ -1,0 +1,51 @@
+/* required for angular-bootstrap */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.content {
+	margin-top: 60px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+a span.glyphicon {
+	font-size: 1.2em;
+}
+
+.blue{
+	color: blue;
+}
+
+.red{
+	color: red;
+}
+
+.green{
+	color: green;
+}
+
+.row-space{
+	margin-top: 2%;
+}
+
+.hero-unit {
+	padding: 60px;/* CHANGE PADDING HERE*/
+	margin-bottom: 20px; 
+	font-size: 18px;
+	font-weight: 200;
+	line-height: 30px;
+	color: inherit;
+	background-color: #FFFFFF; /* CHANGE BACKGROUND HERE*/
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
