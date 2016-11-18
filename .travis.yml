@@ -9,7 +9,7 @@ install: true
 before_script:
   - npm install bower -g
   - bower install
-script: mvn install -P boot
+script: mvn install
 addons:
   ssh_known_hosts:
   - repo.maven.org
